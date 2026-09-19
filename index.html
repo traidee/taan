@@ -3,61 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChicBazar MX - Moda Femenina</title>
+    <title>EmpoderaJobs - Portal de Empleo para Mujeres</title>
+    <!-- Tailwind CSS (via CDN para el prototipo) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Configuración personalizada de Tailwind -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
+                        // Paleta morada/purpura inspirada en el empoderamiento femenino
                         brand: {
-                            50: '#fdf2f8', // rose-50
-                            100: '#fce7f3', // rose-100
-                            500: '#ec4899', // rose-500 (Rosa principal)
-                            600: '#db2777', // rose-600
-                            700: '#be185d', // rose-700
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7e22ce',
+                            800: '#6b21a8',
+                            900: '#581c87',
                         }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+    <style>
+        /* Importar fuente Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 font-sans text-gray-800 flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen">
 
     <!-- Header / Navbar -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
+            <div class="flex justify-between h-20 items-center">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="text-2xl font-bold text-brand-600 flex items-center gap-2">
-                        <i class="fas fa-shopping-bag"></i>
-                        ChicBazar MX
-                    </a>
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <i class="fas fa-briefcase text-brand-600 text-3xl mr-2"></i>
+                    <span class="font-bold text-2xl text-gray-900 tracking-tight">Empodera<span class="text-brand-600">Jobs</span></span>
                 </div>
 
-                <!-- Navegación de Escritorio -->
+                <!-- Desktop Navigation -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="#" class="text-gray-600 hover:text-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Inicio</a>
-                    <a href="#" class="text-gray-600 hover:text-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Colecciones</a>
-                    <a href="#" class="text-gray-600 hover:text-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Destacados</a>
-                    <a href="#" class="text-gray-600 hover:text-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Cómo Vender</a>
+                    <a href="#" class="text-brand-600 font-semibold border-b-2 border-brand-600 px-1 py-2">Inicio</a>
+                    <a href="#" class="text-gray-500 hover:text-brand-600 font-medium px-1 py-2 transition-colors">Empleos</a>
+                    <a href="#" class="text-gray-500 hover:text-brand-600 font-medium px-1 py-2 transition-colors">Empresas Inclusivas</a>
+                    <a href="#" class="text-gray-500 hover:text-brand-600 font-medium px-1 py-2 transition-colors">Mentoría</a>
+                    <a href="#" class="text-gray-500 hover:text-brand-600 font-medium px-1 py-2 transition-colors">Recursos</a>
                 </nav>
 
-                <!-- Botones de Acción -->
+                <!-- Auth Buttons -->
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="#" class="text-gray-600 hover:text-brand-600 font-medium">Iniciar sesión</a>
-                    <a href="#" class="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2 rounded-full font-medium transition-colors shadow-sm flex items-center gap-2">
-                        <i class="fas fa-camera"></i>
-                        Vender mi ropa
+                    <a href="#" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Iniciar sesión</a>
+                    <a href="#" class="bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 rounded-full font-medium transition-colors shadow-sm flex items-center gap-2">
+                        <i class="fas fa-file-upload"></i> Subir mi CV
                     </a>
                 </div>
 
-                <!-- Botón Menú Móvil -->
+                <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button class="text-gray-600 hover:text-brand-600 focus:outline-none">
+                    <button class="text-gray-500 hover:text-gray-900 focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -65,200 +85,248 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <div class="relative bg-brand-600 overflow-hidden">
-        <div class="absolute inset-0">
-            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Fondo" class="w-full h-full object-cover opacity-20">
-        </div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col items-center text-center">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4">
-                Renueva tu estilo,<br> vende tu armario.
-            </h1>
-            <p class="text-xl text-brand-50 max-w-2xl mb-10">
-                El bazar exclusivo para mujeres en CDMX y Edomex. Compra moda increíble y dale una segunda vida a las prendas que ya no usas.
-            </p>
-
-            <!-- Buscador Central -->
-            <div class="w-full max-w-4xl bg-white p-2 rounded-lg md:rounded-full shadow-lg flex flex-col md:flex-row gap-2">
-                <div class="flex-1 flex items-center px-4 bg-gray-50 rounded-full">
-                    <i class="fas fa-search text-gray-400"></i>
-                    <input type="text" placeholder="¿Qué buscas? (ej. Vestido Zara, Botas, Bolsa...)" class="w-full bg-transparent border-none focus:ring-0 py-3 px-3 text-gray-700 outline-none">
-                </div>
-                <div class="flex-1 flex items-center px-4 bg-gray-50 rounded-full mt-2 md:mt-0 border-t md:border-t-0 md:border-l border-gray-200">
-                    <i class="fas fa-map-marker-alt text-gray-400"></i>
-                    <select class="w-full bg-transparent border-none focus:ring-0 py-3 px-3 text-gray-700 outline-none appearance-none">
-                        <option value="">Todo CDMX y Edomex</option>
-                        <option value="polanco">Miguel Hidalgo</option>
-                        <option value="coyoacan">Coyoacán</option>
-                        <option value="roma">Cuauhtémoc</option>
-                        <option value="satelite">Naucalpan</option>
-                    </select>
-                </div>
-                <button class="bg-brand-600 hover:bg-brand-700 text-white rounded-full px-8 py-3 font-semibold transition-colors mt-2 md:mt-0">
-                    Buscar Prendas
-                </button>
-            </div>
-
-            <div class="mt-8 flex gap-4 text-brand-50 text-sm font-medium">
-                <span class="flex items-center gap-1"><i class="fas fa-check-circle"></i> Entrega local segura</span>
-                <span class="flex items-center gap-1"><i class="fas fa-check-circle"></i> Moda sustentable</span>
-                <span class="flex items-center gap-1"><i class="fas fa-check-circle"></i> 100% para mujeres</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contenido Principal (Main) -->
+    <!-- Main Content -->
     <main class="flex-grow">
 
-        <!-- Categorías Populares -->
+        <!-- Hero Section -->
+        <section class="relative bg-brand-700">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Mujeres trabajando" class="w-full h-full object-cover opacity-30 mix-blend-multiply">
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 drop-shadow-md">
+                    Tu próximo gran paso <br class="hidden md:block"/> empieza aquí.
+                </h1>
+                <p class="mt-4 text-xl md:text-2xl text-brand-100 max-w-3xl mx-auto mb-10 font-light drop-shadow">
+                    Conectamos el talento femenino con empresas que valoran la diversidad, la inclusión y el liderazgo de las mujeres.
+                </p>
+
+                <!-- Search Bar -->
+                <div class="max-w-4xl mx-auto bg-white rounded-full p-2 shadow-2xl flex flex-col md:flex-row gap-2">
+                    <div class="flex-1 flex items-center px-4 bg-gray-50 rounded-full md:rounded-l-full border border-gray-200">
+                        <i class="fas fa-search text-gray-400"></i>
+                        <input type="text" placeholder="Cargo, habilidad o empresa..." class="w-full bg-transparent border-none focus:ring-0 py-3 px-3 text-gray-700 outline-none">
+                    </div>
+                    <div class="flex-1 flex items-center px-4 bg-gray-50 rounded-full md:rounded-none border border-gray-200">
+                        <i class="fas fa-map-marker-alt text-gray-400"></i>
+                        <select class="w-full bg-transparent border-none focus:ring-0 py-3 px-3 text-gray-700 outline-none appearance-none cursor-pointer">
+                            <option value="">Cualquier ubicación</option>
+                            <option value="remoto">Remoto 100%</option>
+                            <option value="hibrido">Híbrido</option>
+                            <option value="cdmx">Ciudad de México</option>
+                            <option value="mty">Monterrey</option>
+                        </select>
+                    </div>
+                    <button class="bg-brand-600 hover:bg-brand-700 text-white rounded-full px-8 py-3 font-semibold transition-colors shadow-md w-full md:w-auto">
+                        Buscar Empleo
+                    </button>
+                </div>
+
+                <!-- Quick Tags -->
+                <div class="mt-8 flex flex-wrap justify-center gap-3 text-sm text-white font-medium">
+                    <span class="flex items-center gap-1 bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full"><i class="fas fa-check-circle"></i> Trabajo Remoto</span>
+                    <span class="flex items-center gap-1 bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full"><i class="fas fa-check-circle"></i> Brecha Salarial Cero</span>
+                    <span class="flex items-center gap-1 bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full"><i class="fas fa-check-circle"></i> Liderazgo Femenino</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sectores Profesionales -->
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <h2 class="text-2xl font-bold text-gray-900 mb-8">Nuestras Colecciones</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <a href="#" class="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 group">
-                    <div class="w-16 h-16 bg-brand-50 text-brand-600 rounded-full flex items-center justify-center text-2xl mb-3 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                        <i class="fas fa-tshirt"></i>
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">Explorar por Sector</h2>
+            <p class="text-gray-500 mb-8">Encuentra oportunidades en las industrias de mayor crecimiento.</p>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <!-- Categoria 1 -->
+                <a href="#" class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md border border-gray-100 flex flex-col items-center text-center group transition-all hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-brand-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-100 transition-colors">
+                        <i class="fas fa-laptop-code text-2xl text-brand-600"></i>
                     </div>
-                    <span class="font-medium text-gray-800">Blusas</span>
-                    <span class="text-xs text-gray-500 mt-1">1.2k prendas</span>
+                    <h3 class="font-semibold text-gray-800">Tecnología</h3>
+                    <span class="text-xs text-gray-500 mt-1">1,240 vacantes</span>
                 </a>
-                <a href="#" class="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 group">
-                    <div class="w-16 h-16 bg-brand-50 text-brand-600 rounded-full flex items-center justify-center text-2xl mb-3 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                        <i class="fas fa-female"></i>
+
+                <!-- Categoria 2 -->
+                <a href="#" class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md border border-gray-100 flex flex-col items-center text-center group transition-all hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-brand-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-100 transition-colors">
+                        <i class="fas fa-chart-line text-2xl text-brand-600"></i>
                     </div>
-                    <span class="font-medium text-gray-800">Vestidos</span>
-                    <span class="text-xs text-gray-500 mt-1">850 prendas</span>
+                    <h3 class="font-semibold text-gray-800">Finanzas</h3>
+                    <span class="text-xs text-gray-500 mt-1">850 vacantes</span>
                 </a>
-                <a href="#" class="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 group">
-                    <div class="w-16 h-16 bg-brand-50 text-brand-600 rounded-full flex items-center justify-center text-2xl mb-3 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                        <i class="fas fa-shoe-prints"></i>
+
+                <!-- Categoria 3 -->
+                <a href="#" class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md border border-gray-100 flex flex-col items-center text-center group transition-all hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-brand-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-100 transition-colors">
+                        <i class="fas fa-paint-brush text-2xl text-brand-600"></i>
                     </div>
-                    <span class="font-medium text-gray-800">Calzado</span>
-                    <span class="text-xs text-gray-500 mt-1">3.1k pares</span>
+                    <h3 class="font-semibold text-gray-800">Diseño</h3>
+                    <span class="text-xs text-gray-500 mt-1">620 vacantes</span>
                 </a>
-                <a href="#" class="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 group">
-                    <div class="w-16 h-16 bg-brand-50 text-brand-600 rounded-full flex items-center justify-center text-2xl mb-3 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                        <i class="fas fa-shopping-bag"></i>
+
+                <!-- Categoria 4 -->
+                <a href="#" class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md border border-gray-100 flex flex-col items-center text-center group transition-all hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-brand-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-100 transition-colors">
+                        <i class="fas fa-heartbeat text-2xl text-brand-600"></i>
                     </div>
-                    <span class="font-medium text-gray-800">Bolsas</span>
-                    <span class="text-xs text-gray-500 mt-1">950 accesorios</span>
+                    <h3 class="font-semibold text-gray-800">Salud</h3>
+                    <span class="text-xs text-gray-500 mt-1">930 vacantes</span>
                 </a>
-                <a href="#" class="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 group">
-                    <div class="w-16 h-16 bg-brand-50 text-brand-600 rounded-full flex items-center justify-center text-2xl mb-3 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                        <i class="fas fa-gem"></i>
+
+                <!-- Categoria 5 -->
+                <a href="#" class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md border border-gray-100 flex flex-col items-center text-center group transition-all hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-brand-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-100 transition-colors">
+                        <i class="fas fa-chalkboard-teacher text-2xl text-brand-600"></i>
                     </div>
-                    <span class="font-medium text-gray-800">Joyería</span>
-                    <span class="text-xs text-gray-500 mt-1">4.2k piezas</span>
+                    <h3 class="font-semibold text-gray-800">Educación</h3>
+                    <span class="text-xs text-gray-500 mt-1">450 vacantes</span>
                 </a>
-                <a href="#" class="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 group">
-                    <div class="w-16 h-16 bg-brand-50 text-brand-600 rounded-full flex items-center justify-center text-2xl mb-3 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                        <i class="fas fa-glasses"></i>
+
+                <!-- Categoria 6 -->
+                <a href="#" class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md border border-gray-100 flex flex-col items-center text-center group transition-all hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-brand-50 rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-100 transition-colors">
+                        <i class="fas fa-bullhorn text-2xl text-brand-600"></i>
                     </div>
-                    <span class="font-medium text-gray-800">Accesorios</span>
-                    <span class="text-xs text-gray-500 mt-1">620 accesorios</span>
+                    <h3 class="font-semibold text-gray-800">Marketing</h3>
+                    <span class="text-xs text-gray-500 mt-1">1,100 vacantes</span>
                 </a>
             </div>
         </section>
 
-        <!-- Anuncios Destacados -->
-        <section class="bg-gray-100 py-16">
+        <!-- Últimas Vacantes -->
+        <section class="bg-gray-50 py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-end mb-8">
                     <div>
-                        <h2 class="text-2xl font-bold text-gray-900">Anuncios Destacados</h2>
-                        <p class="text-gray-600 mt-1">Las mejores ofertas seleccionadas para ti</p>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Vacantes Destacadas</h2>
+                        <p class="text-gray-500">Oportunidades laborales en empresas comprometidas con la equidad.</p>
                     </div>
-                    <a href="#" class="text-brand-600 hover:text-brand-700 font-medium hidden sm:block">Ver todos los anuncios &rarr;</a>
+                    <a href="#" class="hidden md:flex items-center text-brand-600 font-semibold hover:text-brand-800 transition-colors">
+                        Ver todas las vacantes <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Tarjeta de Anuncio 1 -->
-                    <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
-                        <div class="relative h-48">
-                            <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vestido de Noche" class="w-full h-full object-cover">
-                            <div class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm p-1.5 rounded-full text-gray-400 hover:text-brand-500 cursor-pointer transition-colors">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <span class="absolute bottom-2 left-2 bg-gray-900/80 text-white text-xs font-bold px-2 py-1 rounded">Destacado</span>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                    <!-- Vacante 1 -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow relative">
+                        <div class="absolute top-6 right-6 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">
+                            Nuevo
                         </div>
-                        <div class="p-4">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-semibold text-lg text-gray-900 line-clamp-1">Vestido de Noche Zara</h3>
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 border border-gray-200">
+                                <!-- Logo Placeholder -->
+                                <i class="fab fa-google text-3xl text-gray-600"></i>
                             </div>
-                            <p class="text-brand-600 font-bold text-xl mb-3">$ 450 MXN</p>
-                            <p class="text-sm text-gray-500 mb-4 line-clamp-2">Talla M. Solo lo usé una vez para una boda. En perfecto estado, sin detalles. Color vino.</p>
-                            <div class="flex items-center text-xs text-gray-400 border-t pt-3">
-                                <span class="flex items-center gap-1"><i class="fas fa-map-marker-alt"></i> Polanco, CDMX</span>
-                                <span class="mx-2">&bull;</span>
-                                <span class="flex items-center gap-1"><i class="far fa-clock"></i> Hace 2h</span>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-xl text-gray-900 mb-1">Senior UX/UI Designer</h3>
+                                <p class="text-brand-600 font-medium mb-3">TechNova Solutions</p>
+
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-md flex items-center gap-1"><i class="fas fa-map-marker-alt"></i> Remoto</span>
+                                    <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-md flex items-center gap-1"><i class="fas fa-clock"></i> Tiempo Completo</span>
+                                    <span class="bg-brand-50 text-brand-700 text-xs px-2.5 py-1 rounded-md flex items-center gap-1 border border-brand-200"><i class="fas fa-dollar-sign"></i> $45k - $60k MXN/mes</span>
+                                </div>
+
+                                <p class="text-gray-500 text-sm line-clamp-2 mb-4">Buscamos una diseñadora experta para liderar el rediseño de nuestra app principal. Excelente ambiente, horarios flexibles y apoyo por maternidad.</p>
+
+                                <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                                    <span class="text-xs text-gray-400">Publicado hace 2 horas</span>
+                                    <button class="text-brand-600 font-semibold hover:text-brand-800 hover:bg-brand-50 px-4 py-2 rounded-lg transition-colors">
+                                        Postularme
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Tarjeta de Anuncio 2 -->
-                    <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
-                        <div class="relative h-48">
-                            <img src="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bolsa de diseñador" class="w-full h-full object-cover">
-                            <div class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm p-1.5 rounded-full text-gray-400 hover:text-brand-500 cursor-pointer transition-colors">
-                                <i class="far fa-heart"></i>
+                    <!-- Vacante 2 -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow relative">
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 border border-blue-100">
+                                <i class="fas fa-building text-3xl text-blue-500"></i>
                             </div>
-                        </div>
-                        <div class="p-4">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-semibold text-lg text-gray-900 line-clamp-1">Bolsa Michael Kors</h3>
-                            </div>
-                            <p class="text-brand-600 font-bold text-xl mb-3">$ 1,200 MXN</p>
-                            <p class="text-sm text-gray-500 mb-4 line-clamp-2">Bolsa original tote en color crema. Detalles mínimos de uso en las asas. Incluye guardapolvo.</p>
-                            <div class="flex items-center text-xs text-gray-400 border-t pt-3">
-                                <span class="flex items-center gap-1"><i class="fas fa-map-marker-alt"></i> Satélite, Edomex</span>
-                                <span class="mx-2">&bull;</span>
-                                <span class="flex items-center gap-1"><i class="far fa-clock"></i> Hace 5h</span>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-xl text-gray-900 mb-1">Directora de Finanzas (CFO)</h3>
+                                <p class="text-brand-600 font-medium mb-3">Grupo Financiero Inclusivo</p>
+
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-md flex items-center gap-1"><i class="fas fa-map-marker-alt"></i> CDMX (Híbrido)</span>
+                                    <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-md flex items-center gap-1"><i class="fas fa-briefcase"></i> Ejecutivo</span>
+                                </div>
+
+                                <p class="text-gray-500 text-sm line-clamp-2 mb-4">Oportunidad ejecutiva para liderar la estrategia financiera. Empresa certificada en equidad de género salarial.</p>
+
+                                <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                                    <span class="text-xs text-gray-400">Publicado hace 1 día</span>
+                                    <button class="text-brand-600 font-semibold hover:text-brand-800 hover:bg-brand-50 px-4 py-2 rounded-lg transition-colors">
+                                        Postularme
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Tarjeta de Anuncio 3 -->
-                    <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
-                        <div class="relative h-48">
-                            <img src="https://images.unsplash.com/photo-1550639525-c97d455acf70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Botas" class="w-full h-full object-cover">
-                            <div class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm p-1.5 rounded-full text-gray-400 hover:text-brand-500 cursor-pointer transition-colors">
-                                <i class="far fa-heart"></i>
+                    <!-- Vacante 3 -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow relative">
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0 border border-green-100">
+                                <i class="fab fa-envira text-3xl text-green-500"></i>
                             </div>
-                        </div>
-                        <div class="p-4">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-semibold text-lg text-gray-900 line-clamp-1">Botines de Piel Negros</h3>
-                            </div>
-                            <p class="text-brand-600 font-bold text-xl mb-3">$ 600 MXN</p>
-                            <p class="text-sm text-gray-500 mb-4 line-clamp-2">Talla 4.5. Marca Stradivarius. Súper cómodos, suela track. Los vendo porque me aprietan un poco.</p>
-                            <div class="flex items-center text-xs text-gray-400 border-t pt-3">
-                                <span class="flex items-center gap-1"><i class="fas fa-map-marker-alt"></i> Coyoacán, CDMX</span>
-                                <span class="mx-2">&bull;</span>
-                                <span class="flex items-center gap-1"><i class="far fa-clock"></i> Hace 1 día</span>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-xl text-gray-900 mb-1">Ingeniera de Software Backend</h3>
+                                <p class="text-brand-600 font-medium mb-3">EcoTech Startup</p>
+
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-md flex items-center gap-1"><i class="fas fa-map-marker-alt"></i> Remoto LatAm</span>
+                                    <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-md flex items-center gap-1"><i class="fas fa-code"></i> Python / Node.js</span>
+                                </div>
+
+                                <p class="text-gray-500 text-sm line-clamp-2 mb-4">Únete a nuestro equipo de ingeniería, actualmente conformado en un 60% por mujeres. Desarrollo de soluciones sustentables.</p>
+
+                                <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                                    <span class="text-xs text-gray-400">Publicado hace 3 días</span>
+                                    <button class="text-brand-600 font-semibold hover:text-brand-800 hover:bg-brand-50 px-4 py-2 rounded-lg transition-colors">
+                                        Postularme
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Tarjeta de Anuncio 4 -->
-                    <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
-                        <div class="relative h-48">
-                            <img src="https://images.unsplash.com/photo-1564257631407-4deec1c99eb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Chamarra" class="w-full h-full object-cover">
-                            <div class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm p-1.5 rounded-full text-gray-400 hover:text-brand-500 cursor-pointer transition-colors">
-                                <i class="far fa-heart"></i>
+                    <!-- Vacante 4 -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow relative">
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 bg-purple-50 rounded-lg flex items-center justify-center flex-shrink-0 border border-purple-100">
+                                <i class="fas fa-bullhorn text-3xl text-purple-500"></i>
                             </div>
-                        </div>
-                        <div class="p-4">
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-semibold text-lg text-gray-900 line-clamp-1">Chamarra de Mezclilla Levi's</h3>
-                            </div>
-                            <p class="text-brand-600 font-bold text-xl mb-3">$ 350 MXN</p>
-                            <p class="text-sm text-gray-500 mb-4 line-clamp-2">Talla G. Corte oversize, tela súper resistente. Diseño vintage de los 90s.</p>
-                            <div class="flex items-center text-xs text-gray-400 border-t pt-3">
-                                <span class="flex items-center gap-1"><i class="fas fa-map-marker-alt"></i> Roma, CDMX</span>
-                                <span class="mx-2">&bull;</span>
-                                <span class="flex items-center gap-1"><i class="far fa-clock"></i> Hace 2 días</span>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-xl text-gray-900 mb-1">Especialista en Marketing Digital</h3>
+                                <p class="text-brand-600 font-medium mb-3">Agencia Creativa Violeta</p>
+
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-md flex items-center gap-1"><i class="fas fa-map-marker-alt"></i> Guadalajara, Jal.</span>
+                                    <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-md flex items-center gap-1"><i class="fas fa-clock"></i> Medio Tiempo</span>
+                                </div>
+
+                                <p class="text-gray-500 text-sm line-clamp-2 mb-4">Buscamos talento para gestión de campañas B2B. Ideal para madres que buscan reincorporarse al mundo laboral con horarios flexibles.</p>
+
+                                <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                                    <span class="text-xs text-gray-400">Publicado hace 1 semana</span>
+                                    <button class="text-brand-600 font-semibold hover:text-brand-800 hover:bg-brand-50 px-4 py-2 rounded-lg transition-colors">
+                                        Postularme
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="mt-8 text-center md:hidden">
+                    <a href="#" class="inline-block bg-white border border-gray-200 text-brand-600 font-semibold px-6 py-3 rounded-lg w-full text-center hover:bg-gray-50">
+                        Ver todas las vacantes
+                    </a>
                 </div>
             </div>
         </section>
@@ -268,12 +336,12 @@
             <div class="bg-brand-600 rounded-3xl overflow-hidden shadow-xl flex flex-col md:flex-row items-center justify-between p-8 md:p-12 relative">
                 <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
                 <div class="relative z-10 md:w-2/3 mb-8 md:mb-0">
-                    <h2 class="text-3xl font-bold text-white mb-4">Dale una segunda vida a tu ropa</h2>
-                    <p class="text-brand-100 text-lg">Gana dinero vendiendo las prendas que ya no usas. Publicar es totalmente gratis, rápido y 100% seguro para mujeres en CDMX y Edomex.</p>
+                    <h2 class="text-3xl font-bold text-white mb-4">¿Eres una empresa inclusiva?</h2>
+                    <p class="text-brand-100 text-lg">Publica tus vacantes y encuentra el mejor talento femenino. Construyamos juntos equipos de trabajo diversos, equitativos y de alto rendimiento.</p>
                 </div>
                 <div class="relative z-10 md:w-1/3 flex justify-end">
-                    <a href="#" class="bg-white text-brand-600 hover:bg-gray-50 px-8 py-4 rounded-full font-bold text-lg shadow-md transition-all hover:shadow-lg transform hover:-translate-y-1">
-                        Vender mi ropa
+                    <a href="#" class="bg-white text-brand-600 hover:bg-gray-50 px-8 py-4 rounded-full font-bold text-lg shadow-md transition-all hover:shadow-lg transform hover:-translate-y-1 text-center w-full md:w-auto">
+                        Publicar Empleo
                     </a>
                 </div>
             </div>
@@ -286,56 +354,56 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Columna 1: Logo y descripción -->
                 <div class="col-span-1 md:col-span-1">
-                    <a href="#" class="text-2xl font-bold text-white flex items-center gap-2 mb-4">
-                        <i class="fas fa-shopping-bag text-brand-500"></i>
-                        ChicBazar MX
-                    </a>
+                    <div class="flex items-center cursor-pointer mb-4">
+                        <i class="fas fa-briefcase text-brand-500 text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-white tracking-tight">Empodera<span class="text-brand-500">Jobs</span></span>
+                    </div>
                     <p class="text-sm text-gray-400 mb-6">
-                        El mercado local de moda pre-loved más seguro para mujeres en CDMX y Estado de México.
+                        Impulsando la carrera profesional de las mujeres. La plataforma líder en empleos equitativos y seguros.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
 
-                <!-- Columna 2: Enlaces rápidos -->
+                <!-- Columna 2: Candidatas -->
                 <div>
-                    <h3 class="text-white font-semibold mb-4">Comunidad</h3>
+                    <h3 class="text-white font-semibold mb-4">Candidatas</h3>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-brand-500 transition-colors">Acerca de nosotras</a></li>
-                        <li><a href="#" class="hover:text-brand-500 transition-colors">Cómo comprar</a></li>
-                        <li><a href="#" class="hover:text-brand-500 transition-colors">Cómo vender</a></li>
-                        <li><a href="#" class="hover:text-brand-500 transition-colors">Blog de Moda</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Buscar Empleos</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Crear Perfil Profesional</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Consejos para Entrevistas</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Guía Salarial</a></li>
                     </ul>
                 </div>
 
-                <!-- Columna 3: Soporte -->
+                <!-- Columna 3: Empresas -->
                 <div>
-                    <h3 class="text-white font-semibold mb-4">Ayuda</h3>
+                    <h3 class="text-white font-semibold mb-4">Empresas</h3>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-brand-500 transition-colors">Centro de ayuda</a></li>
-                        <li><a href="#" class="hover:text-brand-500 transition-colors">Guía de envíos y entregas</a></li>
-                        <li><a href="#" class="hover:text-brand-500 transition-colors">Consejos de seguridad</a></li>
-                        <li><a href="#" class="hover:text-brand-500 transition-colors">Contacto</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Publicar Vacante</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Precios y Planes</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Certificación de Equidad</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Búsqueda de Talento</a></li>
                     </ul>
                 </div>
 
                 <!-- Columna 4: Legal -->
                 <div>
-                    <h3 class="text-white font-semibold mb-4">Legal</h3>
+                    <h3 class="text-white font-semibold mb-4">Acerca de</h3>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-brand-500 transition-colors">Términos y condiciones</a></li>
-                        <li><a href="#" class="hover:text-brand-500 transition-colors">Política de privacidad</a></li>
-                        <li><a href="#" class="hover:text-brand-500 transition-colors">Políticas de devolución</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Nuestra Misión</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Términos de Servicio</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Política de Privacidad</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Contacto</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-                <p>&copy; 2024 ChicBazar MX. Todos los derechos reservados.</p>
+                <p>&copy; 2024 EmpoderaJobs. Todos los derechos reservados.</p>
                 <div class="mt-4 md:mt-0 flex items-center gap-2">
                     <span>Hecho con</span>
                     <i class="fas fa-heart text-brand-500"></i>

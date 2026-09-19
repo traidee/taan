@@ -63,7 +63,7 @@ jobs = [
         "JOB_TITLE": "Especialista en Marketing Digital",
         "COMPANY": "Agencia Creativa Violeta",
         "JOB_IMAGE": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1000&q=80",
-        "ICON_BG": "bg-purple-50",
+        "ICON_BG": "bg-brand-50",
         "ICON_BORDER": "border-purple-100",
         "ICON_CLASS": "fas fa-bullhorn",
         "ICON_COLOR": "text-purple-500",

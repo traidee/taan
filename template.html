@@ -92,6 +92,11 @@
                 </div>
             </div>
 
+            <!-- Job Featured Image -->
+            <div class="w-full h-64 overflow-hidden bg-gray-100">
+                <img src="{{JOB_IMAGE}}" alt="{{JOB_TITLE}}" class="w-full h-full object-cover">
+            </div>
+
             <!-- Job Description -->
             <div class="p-8">
                 <h2 class="text-xl font-bold text-gray-900 mb-4">Acerca del puesto</h2>
@@ -124,6 +129,14 @@
                     </button>
                     <p class="text-sm text-gray-400 mt-4">Al postularte, confirmas que aceptas nuestros términos de servicio.</p>
                 </div>
+            </div>
+        </div>
+
+        <!-- Similar Jobs Section -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Empleos Similares</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {{SIMILAR_JOBS}}
             </div>
         </div>
     </main>

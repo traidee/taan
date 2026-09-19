@@ -4,11 +4,14 @@ template_file = "template.html"
 with open(template_file, "r") as f:
     template = f.read()
 
+import random
+
 jobs = [
     {
         "filename": "job-ux-designer.html",
         "JOB_TITLE": "Senior UX/UI Designer",
         "COMPANY": "TechNova Solutions",
+        "JOB_IMAGE": "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1000&q=80",
         "ICON_BG": "bg-gray-100",
         "ICON_BORDER": "border-gray-200",
         "ICON_CLASS": "fab fa-google",
@@ -25,6 +28,7 @@ jobs = [
         "filename": "job-cfo.html",
         "JOB_TITLE": "Directora de Finanzas (CFO)",
         "COMPANY": "Grupo Financiero Inclusivo",
+        "JOB_IMAGE": "https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&w=1000&q=80",
         "ICON_BG": "bg-blue-50",
         "ICON_BORDER": "border-blue-100",
         "ICON_CLASS": "fas fa-building",
@@ -41,6 +45,7 @@ jobs = [
         "filename": "job-backend.html",
         "JOB_TITLE": "Ingeniera de Software Backend",
         "COMPANY": "EcoTech Startup",
+        "JOB_IMAGE": "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=1000&q=80",
         "ICON_BG": "bg-green-50",
         "ICON_BORDER": "border-green-100",
         "ICON_CLASS": "fab fa-envira",
@@ -57,6 +62,7 @@ jobs = [
         "filename": "job-marketing.html",
         "JOB_TITLE": "Especialista en Marketing Digital",
         "COMPANY": "Agencia Creativa Violeta",
+        "JOB_IMAGE": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1000&q=80",
         "ICON_BG": "bg-purple-50",
         "ICON_BORDER": "border-purple-100",
         "ICON_CLASS": "fas fa-bullhorn",
@@ -73,6 +79,7 @@ jobs = [
         "filename": "job-hr.html",
         "JOB_TITLE": "Gerente de Recursos Humanos",
         "COMPANY": "PeopleFirst Corporativo",
+        "JOB_IMAGE": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1000&q=80",
         "ICON_BG": "bg-red-50",
         "ICON_BORDER": "border-red-100",
         "ICON_CLASS": "fas fa-users",
@@ -89,6 +96,7 @@ jobs = [
         "filename": "job-product.html",
         "JOB_TITLE": "Product Manager B2B",
         "COMPANY": "SaaS Innovators",
+        "JOB_IMAGE": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80",
         "ICON_BG": "bg-yellow-50",
         "ICON_BORDER": "border-yellow-100",
         "ICON_CLASS": "fas fa-box-open",
@@ -103,11 +111,47 @@ jobs = [
     }
 ]
 
-for job in jobs:
+
+def generate_similar_job_html(job):
+    return f'''
+        <div class="bg-white rounded-xl shadow-sm p-5 border border-gray-100 hover:shadow-md transition-shadow relative">
+            <div class="flex items-start gap-4">
+                <div class="w-12 h-12 {job['ICON_BG']} rounded-lg flex items-center justify-center flex-shrink-0 border {job['ICON_BORDER']}">
+                    <i class="{job['ICON_CLASS']} text-2xl {job['ICON_COLOR']}"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-bold text-lg text-gray-900 mb-1"><a href="{job['filename']}" class="hover:text-brand-600 transition-colors">{job['JOB_TITLE']}</a></h3>
+                    <p class="text-brand-600 text-sm font-medium mb-3">{job['COMPANY']}</p>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-md flex items-center gap-1"><i class="fas fa-map-marker-alt"></i> {job['LOCATION'].split('(')[0].strip()}</span>
+                    </div>
+                    <a href="{job['filename']}" class="text-brand-600 text-sm font-semibold hover:text-brand-800 transition-colors flex items-center">
+                        Ver Detalles <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    '''
+
+for i, job in enumerate(jobs):
     job_html = template
+
+    # 1. Select 2 similar jobs (just picking the next 2 in the list, wrapping around)
+    similar_jobs = []
+    idx1 = (i + 1) % len(jobs)
+    idx2 = (i + 2) % len(jobs)
+    similar_jobs.append(jobs[idx1])
+    similar_jobs.append(jobs[idx2])
+
+    similar_html = "".join([generate_similar_job_html(sj) for sj in similar_jobs])
+
+    # 2. Inject properties
     for key, value in job.items():
         if key != "filename":
             job_html = job_html.replace(f"{{{{{key}}}}}", value)
+
+    # 3. Inject similar jobs html
+    job_html = job_html.replace("{{SIMILAR_JOBS}}", similar_html)
 
     with open(job["filename"], "w") as out:
         out.write(job_html)

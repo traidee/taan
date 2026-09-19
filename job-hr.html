@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerente de Recursos Humanos - EmpoderaJobs</title>
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#faf5ff', 100: '#f3e8ff', 200: '#e9d5ff', 300: '#d8b4fe',
+                            400: '#c084fc', 500: '#a855f7', 600: '#9333ea', 700: '#7e22ce',
+                            800: '#6b21a8', 900: '#581c87',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }</style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer hover:opacity-80 transition-opacity">
+                    <i class="fas fa-briefcase text-brand-600 text-3xl mr-2"></i>
+                    <span class="font-bold text-2xl text-gray-900 tracking-tight">Empodera<span class="text-brand-600">Jobs</span></span>
+                </a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-500 hover:text-brand-600 font-medium px-1 py-2 transition-colors">Inicio</a>
+                    <a href="#" class="text-brand-600 font-semibold border-b-2 border-brand-600 px-1 py-2">Empleos</a>
+                    <a href="#" class="text-gray-500 hover:text-brand-600 font-medium px-1 py-2 transition-colors">Empresas Inclusivas</a>
+                    <a href="#" class="text-gray-500 hover:text-brand-600 font-medium px-1 py-2 transition-colors">Mentoría</a>
+                </nav>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Iniciar sesión</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-8 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <!-- Breadcrumb -->
+        <nav class="text-sm text-gray-500 mb-6">
+            <a href="index.html" class="hover:text-brand-600"><i class="fas fa-home"></i> Inicio</a>
+            <span class="mx-2">/</span>
+            <a href="#" class="hover:text-brand-600">Empleos</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-900 font-medium">Gerente de Recursos Humanos</span>
+        </nav>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+            <!-- Job Header -->
+            <div class="p-8 border-b border-gray-100 bg-gray-50">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="flex items-center gap-5">
+                        <div class="w-20 h-20 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0 border border-red-100">
+                            <i class="fas fa-users text-4xl text-red-500"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-900 mb-2">Gerente de Recursos Humanos</h1>
+                            <p class="text-brand-600 text-lg font-medium">PeopleFirst Corporativo</p>
+                        </div>
+                    </div>
+                    <button class="w-full md:w-auto bg-brand-600 hover:bg-brand-700 text-white px-8 py-3 rounded-full font-bold shadow-md transition-all hover:-translate-y-0.5">
+                        Postularme Ahora
+                    </button>
+                </div>
+
+                <!-- Job Meta Tags -->
+                <div class="flex flex-wrap gap-3 mt-6">
+                    <span class="bg-white text-gray-700 px-4 py-2 rounded-lg border border-gray-200 flex items-center gap-2 font-medium">
+                        <i class="fas fa-map-marker-alt text-gray-400"></i> Monterrey, N.L.
+                    </span>
+                    <span class="bg-white text-gray-700 px-4 py-2 rounded-lg border border-gray-200 flex items-center gap-2 font-medium">
+                        <i class="fas fa-clock text-gray-400"></i> Tiempo Completo
+                    </span>
+                    <span class="bg-brand-50 text-brand-700 px-4 py-2 rounded-lg border border-brand-200 flex items-center gap-2 font-bold">
+                        <i class="fas fa-dollar-sign"></i> $50,000 - $70,000 MXN/mes
+                    </span>
+                </div>
+            </div>
+
+            <!-- Job Description -->
+            <div class="p-8">
+                <h2 class="text-xl font-bold text-gray-900 mb-4">Acerca del puesto</h2>
+                <p class="text-gray-600 leading-relaxed mb-8">
+                    Buscamos a una líder apasionada por la diversidad y la inclusión para tomar las riendas de nuestro departamento de HR. Tu misión principal será transformar nuestra cultura organizacional y asegurar que tengamos los mejores procesos de retención de talento femenino.
+                </p>
+
+                <h2 class="text-xl font-bold text-gray-900 mb-4">Responsabilidades</h2>
+                <ul class="list-disc list-inside text-gray-600 space-y-2 mb-8 ml-2">
+                    <li>Liderar el equipo de reclutamiento y selección con perspectiva de género.</li><li>Desarrollar políticas corporativas inclusivas y protocolos contra el acoso.</li><li>Gestionar programas de bienestar físico y mental para los empleados.</li><li>Medir e implementar estrategias para asegurar brecha salarial cero.</li>
+                </ul>
+
+                <h2 class="text-xl font-bold text-gray-900 mb-4">Requisitos</h2>
+                <ul class="list-disc list-inside text-gray-600 space-y-2 mb-8 ml-2">
+                    <li>Licenciatura en Psicología, Administración o afín.</li><li>Experiencia de 5+ años en puestos gerenciales de Recursos Humanos.</li><li>Diplomados o certificaciones comprobables en Diversidad, Equidad e Inclusión (DEI).</li><li>Excelentes habilidades de negociación y resolución de conflictos.</li>
+                </ul>
+
+                <div class="bg-purple-50 rounded-xl p-6 border border-purple-100 mb-8">
+                    <h2 class="text-lg font-bold text-brand-800 mb-3 flex items-center gap-2">
+                        <i class="fas fa-star text-brand-500"></i> Beneficios Inclusivos
+                    </h2>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-brand-900 font-medium">
+                        <li><i class='fas fa-check-circle text-brand-500 mr-2'></i> Vales de despensa y fondo de ahorro</li><li><i class='fas fa-check-circle text-brand-500 mr-2'></i> Bonos por cumplimiento de métricas de diversidad</li><li><i class='fas fa-check-circle text-brand-500 mr-2'></i> Seguro de vida y SGMM</li><li><i class='fas fa-check-circle text-brand-500 mr-2'></i> 20 días de vacaciones desde el primer año</li>
+                    </ul>
+                </div>
+
+                <div class="text-center pt-6 border-t border-gray-100">
+                    <button class="bg-brand-600 hover:bg-brand-700 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg transition-all hover:shadow-xl hover:-translate-y-1">
+                        Enviar mi CV y Postularme
+                    </button>
+                    <p class="text-sm text-gray-400 mt-4">Al postularte, confirmas que aceptas nuestros términos de servicio.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Mini -->
+    <footer class="bg-gray-900 text-gray-300 py-6 border-t border-gray-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+            &copy; 2024 EmpoderaJobs. Todos los derechos reservados.
+        </div>
+    </footer>
+</body>
+</html>

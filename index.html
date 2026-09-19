@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClasificadosOnline - Encuentra y Pública de Todo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold text-brand-600 flex items-center gap-2">
+                        <i class="fas fa-bullhorn"></i>
+                        ClasiMarket
+                    </a>
+                </div>
+
+                <!-- Navegación de Escritorio -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Inicio</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Categorías</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Ofertas</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Ayuda</a>
+                </nav>
+
+                <!-- Botones de Acción -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-brand-600 font-medium">Iniciar sesión</a>
+                    <a href="#" class="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2 rounded-full font-medium transition-colors shadow-sm flex items-center gap-2">
+                        <i class="fas fa-plus-circle"></i>
+                        Publicar Anuncio
+                    </a>
+                </div>
+
+                <!-- Botón Menú Móvil -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-600 hover:text-brand-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="relative bg-brand-600 overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Fondo" class="w-full h-full object-cover opacity-20">
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col items-center text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4">
+                Encuentra lo que buscas,<br> vende lo que no usas
+            </h1>
+            <p class="text-xl text-brand-50 max-w-2xl mb-10">
+                La plataforma líder de anuncios clasificados. Seguro, rápido y fácil. Únete a miles de compradores y vendedores hoy mismo.
+            </p>
+
+            <!-- Buscador Central -->
+            <div class="w-full max-w-4xl bg-white p-2 rounded-lg md:rounded-full shadow-lg flex flex-col md:flex-row gap-2">
+                <div class="flex-1 flex items-center px-4 bg-gray-50 rounded-full">
+                    <i class="fas fa-search text-gray-400"></i>
+                    <input type="text" placeholder="¿Qué estás buscando?" class="w-full bg-transparent border-none focus:ring-0 py-3 px-3 text-gray-700 outline-none">
+                </div>
+                <div class="flex-1 flex items-center px-4 bg-gray-50 rounded-full mt-2 md:mt-0 border-t md:border-t-0 md:border-l border-gray-200">
+                    <i class="fas fa-map-marker-alt text-gray-400"></i>
+                    <select class="w-full bg-transparent border-none focus:ring-0 py-3 px-3 text-gray-700 outline-none appearance-none">
+                        <option value="">Toda la región</option>
+                        <option value="madrid">Madrid</option>
+                        <option value="barcelona">Barcelona</option>
+                        <option value="valencia">Valencia</option>
+                    </select>
+                </div>
+                <button class="bg-brand-600 hover:bg-brand-700 text-white rounded-full px-8 py-3 font-semibold transition-colors mt-2 md:mt-0">
+                    Buscar
+                </button>
+            </div>
+
+            <div class="mt-8 flex gap-4 text-brand-50 text-sm font-medium">
+                <span class="flex items-center gap-1"><i class="fas fa-check-circle"></i> Publicación gratis</span>
+                <span class="flex items-center gap-1"><i class="fas fa-check-circle"></i> Pago seguro</span>
+                <span class="flex items-center gap-1"><i class="fas fa-check-circle"></i> Soporte 24/7</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido Principal (Main) -->
+    <main class="flex-grow">
+
+        <!-- Categorías Populares -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Explorar por Categorías</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="#" class="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 group">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-2xl mb-3 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <span class="font-medium text-gray-800">Vehículos</span>
+                    <span class="text-xs text-gray-500 mt-1">2.4k anuncios</span>
+                </a>
+                <a href="#" class="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 group">
+                    <div class="w-16 h-16 bg-green-50 text-green-600 rounded-full flex items-center justify-center text-2xl mb-3 group-hover:bg-green-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <span class="font-medium text-gray-800">Inmuebles</span>
+                    <span class="text-xs text-gray-500 mt-1">1.8k anuncios</span>
+                </a>
+                <a href="#" class="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 group">
+                    <div class="w-16 h-16 bg-purple-50 text-purple-600 rounded-full flex items-center justify-center text-2xl mb-3 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <span class="font-medium text-gray-800">Electrónica</span>
+                    <span class="text-xs text-gray-500 mt-1">3.1k anuncios</span>
+                </a>
+                <a href="#" class="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 group">
+                    <div class="w-16 h-16 bg-yellow-50 text-yellow-600 rounded-full flex items-center justify-center text-2xl mb-3 group-hover:bg-yellow-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <span class="font-medium text-gray-800">Empleos</span>
+                    <span class="text-xs text-gray-500 mt-1">950 anuncios</span>
+                </a>
+                <a href="#" class="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 group">
+                    <div class="w-16 h-16 bg-red-50 text-red-600 rounded-full flex items-center justify-center text-2xl mb-3 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <span class="font-medium text-gray-800">Moda</span>
+                    <span class="text-xs text-gray-500 mt-1">4.2k anuncios</span>
+                </a>
+                <a href="#" class="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 group">
+                    <div class="w-16 h-16 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center text-2xl mb-3 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <span class="font-medium text-gray-800">Mascotas</span>
+                    <span class="text-xs text-gray-500 mt-1">620 anuncios</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Anuncios Destacados -->
+        <section class="bg-gray-100 py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-8">
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900">Anuncios Destacados</h2>
+                        <p class="text-gray-600 mt-1">Las mejores ofertas seleccionadas para ti</p>
+                    </div>
+                    <a href="#" class="text-brand-600 hover:text-brand-700 font-medium hidden sm:block">Ver todos los anuncios &rarr;</a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Tarjeta de Anuncio 1 -->
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="relative h-48">
+                            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Coche" class="w-full h-full object-cover">
+                            <div class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm p-1.5 rounded-full text-gray-400 hover:text-red-500 cursor-pointer transition-colors">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <span class="absolute bottom-2 left-2 bg-gray-900/80 text-white text-xs font-bold px-2 py-1 rounded">Destacado</span>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-semibold text-lg text-gray-900 line-clamp-1">Volkswagen Golf 2020</h3>
+                            </div>
+                            <p class="text-brand-600 font-bold text-xl mb-3">€ 18.500</p>
+                            <p class="text-sm text-gray-500 mb-4 line-clamp-2">Impecable estado, único dueño. Mantenimientos al día en concesionario oficial.</p>
+                            <div class="flex items-center text-xs text-gray-400 border-t pt-3">
+                                <span class="flex items-center gap-1"><i class="fas fa-map-marker-alt"></i> Madrid</span>
+                                <span class="mx-2">&bull;</span>
+                                <span class="flex items-center gap-1"><i class="far fa-clock"></i> Hace 2h</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de Anuncio 2 -->
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="relative h-48">
+                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Casa" class="w-full h-full object-cover">
+                            <div class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm p-1.5 rounded-full text-gray-400 hover:text-red-500 cursor-pointer transition-colors">
+                                <i class="far fa-heart"></i>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-semibold text-lg text-gray-900 line-clamp-1">Piso luminoso céntrico</h3>
+                            </div>
+                            <p class="text-brand-600 font-bold text-xl mb-3">€ 1.200 / mes</p>
+                            <p class="text-sm text-gray-500 mb-4 line-clamp-2">3 habitaciones, 2 baños. Balcón con vistas a la plaza. Totalmente amueblado.</p>
+                            <div class="flex items-center text-xs text-gray-400 border-t pt-3">
+                                <span class="flex items-center gap-1"><i class="fas fa-map-marker-alt"></i> Barcelona</span>
+                                <span class="mx-2">&bull;</span>
+                                <span class="flex items-center gap-1"><i class="far fa-clock"></i> Hace 5h</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de Anuncio 3 -->
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="relative h-48">
+                            <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Laptop" class="w-full h-full object-cover">
+                            <div class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm p-1.5 rounded-full text-gray-400 hover:text-red-500 cursor-pointer transition-colors">
+                                <i class="far fa-heart"></i>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-semibold text-lg text-gray-900 line-clamp-1">MacBook Pro M1 16GB</h3>
+                            </div>
+                            <p class="text-brand-600 font-bold text-xl mb-3">€ 1.050</p>
+                            <p class="text-sm text-gray-500 mb-4 line-clamp-2">Como nuevo, sin rasguños. Batería al 98% de salud. Se entrega con caja y cargador.</p>
+                            <div class="flex items-center text-xs text-gray-400 border-t pt-3">
+                                <span class="flex items-center gap-1"><i class="fas fa-map-marker-alt"></i> Valencia</span>
+                                <span class="mx-2">&bull;</span>
+                                <span class="flex items-center gap-1"><i class="far fa-clock"></i> Hace 1 día</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de Anuncio 4 -->
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="relative h-48">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Zapatillas" class="w-full h-full object-cover">
+                            <div class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm p-1.5 rounded-full text-gray-400 hover:text-red-500 cursor-pointer transition-colors">
+                                <i class="far fa-heart"></i>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-semibold text-lg text-gray-900 line-clamp-1">Nike Air Max Talla 42</h3>
+                            </div>
+                            <p class="text-brand-600 font-bold text-xl mb-3">€ 65</p>
+                            <p class="text-sm text-gray-500 mb-4 line-clamp-2">Nuevas sin etiqueta. Las vendo porque me quedan pequeñas. Color rojo.</p>
+                            <div class="flex items-center text-xs text-gray-400 border-t pt-3">
+                                <span class="flex items-center gap-1"><i class="fas fa-map-marker-alt"></i> Sevilla</span>
+                                <span class="mx-2">&bull;</span>
+                                <span class="flex items-center gap-1"><i class="far fa-clock"></i> Hace 2 días</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="bg-brand-600 rounded-3xl overflow-hidden shadow-xl flex flex-col md:flex-row items-center justify-between p-8 md:p-12 relative">
+                <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+                <div class="relative z-10 md:w-2/3 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold text-white mb-4">¿Tienes algo que ya no usas?</h2>
+                    <p class="text-brand-100 text-lg">Gana dinero vendiendo lo que no necesitas. Publicar un anuncio es totalmente gratis y te tomará menos de un minuto.</p>
+                </div>
+                <div class="relative z-10 md:w-1/3 flex justify-end">
+                    <a href="#" class="bg-white text-brand-600 hover:bg-gray-50 px-8 py-4 rounded-full font-bold text-lg shadow-md transition-all hover:shadow-lg transform hover:-translate-y-1">
+                        Publicar ahora gratis
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 border-t border-gray-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Columna 1: Logo y descripción -->
+                <div class="col-span-1 md:col-span-1">
+                    <a href="#" class="text-2xl font-bold text-white flex items-center gap-2 mb-4">
+                        <i class="fas fa-bullhorn text-brand-500"></i>
+                        ClasiMarket
+                    </a>
+                    <p class="text-sm text-gray-400 mb-6">
+                        El lugar ideal para comprar y vender artículos de segunda mano de forma rápida, sencilla y segura.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Enlaces rápidos -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Enlaces Útiles</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Acerca de nosotros</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Cómo funciona</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Precios y planes</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Soporte -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Soporte</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Centro de ayuda</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Reglas de publicación</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Consejos de seguridad</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Legal -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Términos y condiciones</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Política de privacidad</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition-colors">Política de cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2024 ClasiMarket. Todos los derechos reservados.</p>
+                <div class="mt-4 md:mt-0 flex items-center gap-2">
+                    <span>Hecho con</span>
+                    <i class="fas fa-heart text-red-500"></i>
+                    <span>por Jules</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
